@@ -1,13 +1,28 @@
 import { ItemCounter } from "./shopping-cart/ItemCounter";
 
+interface ItemInCart {
+  productName: string;
+  quantity: number;
+}
+
+const itemsInCart: ItemInCart[] = [
+  { productName: 'PlayStation 5', quantity: 1 },
+  { productName: 'Joystick DualSense', quantity: 4 },
+  { productName: 'EA Sports FC 26', quantity: 3 },
+]
+
 export function FirstStepsApp() {
   return (
     <>
       <h1>Carrito de compras</h1>
 
-      <ItemCounter name="PlayStation 5" quantity={1} />
+      {itemsInCart.map(({ productName, quantity }) => (
+        <ItemCounter key={productName} name={productName} quantity={quantity} />
+      ))}
+
+      {/* <ItemCounter name="PlayStation 5" quantity={1} />
       <ItemCounter name="Joystick DualSense" quantity={4} />
-      <ItemCounter name="EA Sports FC 26" quantity={2} />
+      <ItemCounter name="EA Sports FC 26" quantity={2} /> */}
     </>
   );
 }
