@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 // Se recomienda dejar las variables constantes fuera de la función
 const firstName = 'David';
 const lastName = 'Cornejo';
@@ -8,6 +10,13 @@ const isActive = false;
 const address = {
   zipCode: 'ABC-123',
   country: 'Chile',
+};
+
+const myStyles: CSSProperties = {
+  backgroundColor: '#fafafa',
+  borderRadius: 5,
+  padding: 10,
+  marginTop: 20,
 };
 
 export function MyAwesomeApp() {
@@ -21,7 +30,7 @@ export function MyAwesomeApp() {
 
       <h3>{isActive ? 'Activo' : 'No Activo'}</h3>
 
-      <p>{JSON.stringify(address)}</p>
+      <p style={myStyles}>{JSON.stringify(address)}</p>
     </>
   );
 }
