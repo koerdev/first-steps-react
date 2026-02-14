@@ -1,4 +1,9 @@
-export const ItemCounter = () => {
+interface Props {
+  name: string;
+  quantity?: number;
+};
+
+export const ItemCounter = ({ name, quantity }: Props) => {
   return (
     <section
       style={{
@@ -13,11 +18,11 @@ export const ItemCounter = () => {
           width: 150,
         }}
       >
-        PlayStation 5
+        {name}
       </span>
-      <button>+1</button>
-      <span>10</span>
       <button>-1</button>
+      <span>{quantity}</span>
+      <button>+1</button>
     </section>
   )
 }
